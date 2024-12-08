@@ -1,18 +1,16 @@
-let lista = document.querySelectorAll(".tecla")
-let som01 = document.querySelector('#som_tecla_pom');
-let som02 = document.querySelector('#som_tecla_clap');
+//Pom
+
+function tocaSomPom(){
+    document.querySelector("#som_tecla_pom").play();
+}
 
 
-    lista.forEach(function(item,index){
-    if (index === 0){
-        item.addEventListener('click',function(){
-            som01.play();
-        });
-    } else if (index === 1){
-        item.addEventListener('click',function(){
-            som02.play();
-        })
-    }
-});
+const listaDeTeclas = document.querySelectorAll(".tecla");
 
+let contador = 0;
+while (contador < listaDeTeclas.length){
+    listaDeTeclas[contador].onclick = tocaSomPom;
+    contador = contador + 1
+    console.log(contador);
 
+}
